@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+{% block title %} Statistici {% endblock %}
+
+
+{% block header %}
+<style>
+    body {
+    background: url('https://www.rfi.ro/sites/default/files/articol/statistici_0.jpg') no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        background-size: cover;
+        -o-background-size: cover;
+    }
+</style>
+{% endblock %}
+
+
+
+{% block content %}
+
+<div class="container-fluid">
+    <div class="row">
+
+        <div class="col-2">
+            <table class="table table-bordered table-dark table-sm">
+                <thead>
+                    <tr>
+                        <th style="width: 40%" scope="col"></th>
+                        <th style="width: 60%" scope="col">Statistici</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="col">1</th>
+                        <th scope="col">
+                            <a class="btn btn-outline-warning" href=imprrecent>Imprumuturi Recente</a>
+                        </th>
+                    </tr>
+
+                    <tr>
+                        <th scope="col">2</th>
+                        <th scope="col">
+                            <a class="btn btn-outline-warning" href=topstud>Top studenti</a>
+                        </th>
+                    </tr>
+
+                    <tr>
+                        <th scope="col">3</th>
+                        <th scope="col">
+                            <a class="btn btn-outline-warning" href=topgen>Top genuri literare</a>
+                        </th>
+                    </tr>
+
+                    <tr>
+                        <th scope="col">4</th>
+                        <th scope="col">
+                            <a class="btn btn-outline-warning" href=topcarti>Top carti</a>
+                        </th>
+                    </tr>
+
+
+                </tbody>
+            </table>
+        </div>
+
+        <div class="col-5"></div>
+
+        <div class="col-5">
+            <table class="table table-bordered table-dark table-sm table-striped">
+                <thead>
+                    <tr>
+                        <th style = "width: 40%" scope="col">ID tip</th>
+                        <th style="width: 40%" scope="col">Denumire</th>
+                        <th style="width: 40%" scope="col">Numar sali</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for tg in topgen %}
+                    <tr>
+                        <th scope="col">{{tg[0]}}</th>
+                        <th scope="col">{{tg[1]}}</th>
+                        <th scope="col">{{tg[2]}}</th>
+                        
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+{% endblock %}

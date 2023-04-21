@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+{% block title %} Caută  {% endblock %}
+
+
+{% block header%}
+<style>
+    body {
+    background: url('https://api.time.com/wp-content/uploads/2021/12/Neil-Jamieson-BOOKS.jpg') no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        background-size: cover;
+        -o-background-size: cover;
+    }
+</style>
+{% endblock %}
+
+
+
+{% block content %}
+
+<br>
+<div class="mx-auto" style="width: 250px;">
+    <a type="button" class="btn btn-dark" href=Carti>Listă</a>
+    <a type="button" class="btn btn-dark" href=add_carte>Adaugă</a>
+    <a type="button" class="btn btn-dark" href=mod_carte>Modifică</a>
+    <a type="button" class="btn btn-dark" href=ster_carte>Șterge</a>
+    <a type="button" class="btn btn-dark" href=cauta>Caută</a>
+</div>
+
+<br><br><br><br>
+
+<div class="mx-auto" style="width: 450px;">
+    <div class="card" style="width: 450px;">
+        <div class="card-body">
+            <div class="mx-auto" style="width: 150px">
+                <h5 class="card-title">Căutare</h5>
+            </div>
+
+            <h6 class="card-subtitle mb-2 text-muted">Selectează criteriul de căutare</h6>
+
+            <p class="card-text">
+            <form class="form-inline" method="POST" action="#">
+                <select class="custom-select my-1 mr-sm-2" name="selection">
+                    <option value="1">Gen</option>
+                    <option value="2">NrPagini</option>
+                    <option value="3">Data</option>
+                   
+                </select>
+
+                <input type="text" class="form-control my-1 mr-sm-2" name="cheie" placeholder="Introdu valoarea">
+                <button type="submit" class="btn btn-primary my-1">Submit</button>
+            </form>
+            </p>
+
+        </div>
+      </div>
+</div>
+<br>
+<div class="mx-auto" style="width: 600px;">
+    <div class="card" style="width: 600px;">
+        <div class="card-body">
+            <div class="mx-auto" style="width: 150px">
+                <h5 class="card-title">Rezultate</h5>
+            </div>
+
+            <h6 class="card-subtitle mb-2 text-muted">Rezultatele căutării sunt afișate mai jos</h6>
+
+
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        
+                        <th scope="col">Titlu</th>
+                        <th scope="col">Autor</th>
+                        <th scope="col">Gen</th>
+                        <th scope="col">NrPagini</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                {% for g in gen %}
+                    <tr>
+                        <td>{{g[0]}}</td>
+                        <td>{{g[1]}}</td>
+                        <td>{{g[2]}}</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                {% endfor %}
+                {% for p in pag %}
+                    <tr>
+                        <td>{{p[0]}}</td>
+                        <td>{{p[1]}}</td>
+                        <td>{{p[2]}}</td>
+                        <td>{{p[3]}}</td>
+                        <td></td>
+                    </tr>
+                {% endfor %}
+                {% for d in data %}
+                    <tr>
+                        <td>{{d[0]}}</td>
+                        <td>{{d[1]}}</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                {% endfor %}
+                
+                </tbody>
+            </table>
+
+        </div>
+      </div>
+</div>
+{% endblock %}
+

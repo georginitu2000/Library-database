@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block title %} Carti  {% endblock %}
+
+
+{% block header %}
+<style>
+    body {
+    background: url('https://api.time.com/wp-content/uploads/2021/12/Neil-Jamieson-BOOKS.jpg') no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        background-size: cover;
+        -o-background-size: cover;
+    }
+</style>
+{% endblock %}
+
+
+
+{% block content %}
+<div class="mx-auto" style="width: 800px;">
+  <div class="mx-auto p-2" style="width: 500px;">
+      <a type="button" class="btn btn-dark" href=Carti>Listă</a>
+      <a type="button" class="btn btn-dark" href=add_carte>Adaugă</a>
+      <a type="button" class="btn btn-dark" href=mod_carte>Modifică</a>
+      <a type="button" class="btn btn-dark" href=ster_carte>Șterge</a>
+      <a type="button" class="btn btn-dark" href=cauta>Caută</a>
+
+  </div>
+
+    <table class="table table-striped table-dark">
+          <thead>
+            <tr>
+              <th scope="col">CarteID</th>
+                <th scope="col"> SalaID </th>
+              <th scope="col"> Titlu </th>
+                <th scope="col"> Autor </th>
+                <th scope="col"> Nrpagini </th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for carte in carteDetails %}
+            <tr>
+                <th scope="row">{{carte[0]}}</th>
+                <th scope="row">{{carte[1]}}</th>
+                <th scope="row">{{carte[2]}}</th>
+                <th scope="row">{{carte[3]}}</th>
+                <th scope="row">{{carte[4]}}</th>
+                
+            </tr>
+            {%endfor%}
+
+          </tbody>
+    </table>
+  
+
+
+  </div>
+{% endblock %}

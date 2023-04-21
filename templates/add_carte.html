@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% block title %} Adauga  {% endblock %}
+
+
+{% block header %}
+<style>
+    body {
+    background: url('https://api.time.com/wp-content/uploads/2021/12/Neil-Jamieson-BOOKS.jpg') no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        background-size: cover;
+        -o-background-size: cover;
+    }
+    input[type="text"], textarea, input[type="number"] {
+        background-color : #33353B;
+        color : #FFFFFF
+    }
+</style>
+{% endblock %}
+
+
+
+
+{% block content %}
+<div class="mx-auto" style="width: 400px;">
+
+    <div class="mx-auto p-2" style="width: 500px;">
+        <a type="button" class="btn btn-dark" href=Carti>Listă</a>
+        <a type="button" class="btn btn-dark" href=add_carte>Adaugă</a>
+        <a type="button" class="btn btn-dark" href=mod_carte>Modifică</a>
+        <a type="button" class="btn btn-dark" href=ster_carte>Șterge</a>
+        <a type="button" class="btn btn-dark" href=cauta>Caută</a>
+    </div>
+
+
+        <form action="#" method="POST">
+                <br>
+                <button type="button" class="btn btn-dark"> ID Carte </button>
+                <input type = "text" name = "carteID" />
+
+                <br>
+                <button type="button" class="btn btn-dark"> ID Sală </button>
+                <input type = "text" name = "salaID" />
+
+                <br>
+                <button type="button" class="btn btn-dark"> Titlu </button>
+                <input type = "text" name = "titlu" />
+
+                <br>
+                <button type="button" class="btn btn-dark"> Autor </button>
+                <input type = "text" name = "autor" />
+
+                <br>
+                <button type="button" class="btn btn-dark"> Număr pagini </button>
+                <input type = "text" name = "nrpagini" />
+
+                <br><br>
+                <div class="mx-auto" style="width: 300px;">
+                        <input type = "submit" class="btn btn-dark" value="Adaugă"/>
+                        <a type="button" class="btn btn-dark" href=Carti>CANCEL</a>
+                </div>
+        </form>
+</div>
+
+{% endblock %}

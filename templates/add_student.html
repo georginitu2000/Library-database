@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block title %} Adauga  {% endblock %}
+
+
+{% block header %}
+<style>
+    body {
+    background: url('https://www.d120.org/assets/1/18/registration.jpg?5468') no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        background-size: cover;
+        -o-background-size: cover;
+    }
+    input[type="text"], textarea, input[type="number"] {
+        background-color : #33353B;
+        color : #FFFFFF
+    }
+</style>
+{% endblock %}
+
+
+
+
+{% block content %}
+<div class="mx-auto" style="width: 400px;">
+
+    <div class="mx-auto p-2" style="width: 500px;">
+        <a type="button" class="btn btn-dark" href=studenti>Listă</a>
+        <a type="button" class="btn btn-dark" href=add_student>Adaugă</a>
+        <a type="button" class="btn btn-dark" href=mod_student>Modifică</a>
+        <a type="button" class="btn btn-dark" href=ster_student>Șterge</a>
+    </div>
+
+
+        <form action="#" method="POST">
+                <br>
+                <button type="button" class="btn btn-dark"> ID Student </button>
+                <input type = "text" name = "studentID"/>
+
+                <br>
+                <button type="button" class="btn btn-dark"> Nume </button>
+                <input type = "text" name = "nume" />
+
+                <br>
+                <button type="button" class="btn btn-dark"> Prenume </button>
+                <input type = "text" name = "prenume" />
+
+                <br>
+                <button type="button" class="btn btn-dark"> Varsta </button>
+                <input type = "text" name = "varsta" />
+
+                <br>
+                <button type="button" class="btn btn-dark"> Telefon </button>
+                <input type = "text" name = "telefon" />
+
+                <br><br>
+                <div class="mx-auto" style="width: 300px;">
+                        <input type = "submit" class="btn btn-dark" value="Adaugă"/>
+                        <a type="button" class="btn btn-dark" href=studenti>CANCEL</a>
+                </div>
+        </form>
+</div>
+
+{% endblock %}

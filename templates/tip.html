@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block title %} Tip  {% endblock %}
+
+
+{% block header %}
+<style>
+    body {
+    background: url('https://i.pinimg.com/originals/29/59/66/29596680c294800f90e0b205dfdfb24e.png') no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        background-size: cover;
+        -o-background-size: cover;
+    }
+</style>
+{% endblock %}
+
+
+
+{% block content %}
+<div class="mx-auto" style="width: 800px;">
+
+    <table class="table table-striped table-dark">
+          <thead>
+            <tr>
+              <th scope="col">tipID</th>
+                <th scope="col"> denumire </th>
+              <th scope="col"> nrcărți </th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for tip in tipDetails %}
+            <tr>
+                <th scope="row">{{tip[0]}}</th>
+                <th scope="row">{{tip[1]}}</th>
+                <th scope="row">{{tip[2]}}</th>
+                
+            </tr>
+            {%endfor%}
+
+          </tbody>
+    </table>
+  
+
+
+  </div>
+{% endblock %}

@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+{% block title %} Evidenta  {% endblock %}
+
+
+{% block header %}
+<style>
+    body {
+    background: url('https://accesconsulting.md/wp-content/uploads/2020/11/wallpaperflare.com_wallpaper.jpg') no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        background-size: cover;
+        -o-background-size: cover;
+    }
+</style>
+{% endblock %}
+
+
+
+{% block content %}
+
+<div class="container-fluid">
+    <div class="row">
+
+        <div class="col-2">
+            <table class="table table-bordered table-dark table-sm">
+                <thead>
+                    <tr>
+                        <th style="width: 40%" scope="col"></th>
+                        <th style="width: 60%" scope="col">Evidenta</th>
+                    </tr>
+                </thead>
+                <tbody>
+                   
+
+                    <tr>
+                        <th scope="col">1</th>
+                        <th scope="col">
+                            <a class="btn btn-outline-warning" href=genetaj>Gen & Etaj</a>
+                        </th>
+                    </tr>
+
+                    <tr>
+                        <th scope="col">2</th>
+                        <th scope="col">
+                            <a class="btn btn-outline-warning" href=gensala>Gen & Sala</a>
+                        </th>
+                    </tr>
+
+                    <tr>
+                        <th scope="col">3</th>
+                        <th scope="col">
+                            <a class="btn btn-outline-warning" href=studimpr>Studentii care imprumuta</a>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th scope="col">4</th>
+                        <th scope="col">
+                            <a class="btn btn-outline-warning" href=carticartiimpr>Carti imprumutate</a>
+                        </th>
+                    </tr>
+
+
+                </tbody>
+            </table>
+        </div>
+
+        <div class="col-5"></div>
+
+        <div class="col-5">
+            <table class="table table-bordered table-dark table-sm table-striped">
+                <thead>
+                    <tr>
+                        <th style = "width: 40%" scope="col">Etaj</th>
+                        <th style="width: 40%" scope="col">Gen</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for ge in genetaj %}
+                    <tr>
+                        <th scope="col">{{ge[0]}}</th>
+                        <th scope="col">{{ge[1]}}</th>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+{% endblock %}
